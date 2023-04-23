@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CHIN DE</string>
+    <string name="news">НОВИНКИ</string>
+    <string name="stocks">АКЦИИ</string>
+    <string name="drinks">НАПИТКИ</string>
+    <string name="food">ГОРЯЧИЕ<n/> БЛЮДА</string>
+    <string name="fish">РЫБА</string>
+    <string name="apper">ЗАКУСКИ</string>
+</resources>
