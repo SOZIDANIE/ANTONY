@@ -4,4 +4,5 @@ sealed class NavigationForScreens (val rotate: String) {
     object FlashScreen : NavigationForScreens("flash")
     object Main : NavigationForScreens("main")
     object Profile : NavigationForScreens("prof")
+    object Enter : NavigationForScreens("enter")
 }

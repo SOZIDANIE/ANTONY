@@ -8,4 +8,7 @@
     <string name="apper">ЗАКУСКИ</string>
     <string name="enter">ВОЙТИ</string>
     <string name="registration">ЗАРЕГЕСТРИРОВАТЬСЯ</string>
+    <string name="enterPass">Введите пароль</string>
+    <string name="enterName">Введите имя</string>
+    <string name="enterGlav">Вход</string>
 </resources>

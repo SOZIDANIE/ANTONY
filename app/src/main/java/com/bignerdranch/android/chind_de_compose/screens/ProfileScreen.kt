@@ -22,6 +22,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.navigation.NavController
 import com.bignerdranch.android.chind_de_compose.R
+import com.bignerdranch.android.chind_de_compose.navigation.NavigationForScreens
 
 @Composable
 fun ProfileScreen(controller: NavController){
@@ -47,10 +48,10 @@ fun ProfileScreen(controller: NavController){
             color = colorResource(id = R.color.back)
         )){
         Button_forJOb(text = stringResource(R.string.enter), name = "ENTER", sizeF = 250, sizeS = 75) {
-
+            controller.navigate(NavigationForScreens.Enter.rotate)
         }
         Button_forJOb(text = stringResource(R.string.registration), name = "REG", sizeF = 250, sizeS = 75) {
-            
+
         }
     }
 }

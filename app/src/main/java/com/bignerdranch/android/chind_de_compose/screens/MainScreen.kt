@@ -136,12 +136,15 @@ fun profileButton(image: Painter, name: String, onItemClick: () -> Unit) {
                 color = colorResource(id = R.color.tealkor),
                 shape = RoundedCornerShape(50.dp)
             )
-            .clickable {  onItemClick() }
+            .clickable { onItemClick() }
             .size(50.dp, 50.dp)
             .layoutId(name)
     ){
         Image(painter = image, contentDescription = "profile",
-            Modifier.fillMaxSize().clip(CircleShape).size(50.dp, 50.dp),
+            Modifier
+                .fillMaxSize()
+                .clip(CircleShape)
+                .size(50.dp, 50.dp),
             contentScale = ContentScale.FillBounds)
     }
 }
@@ -166,21 +169,25 @@ fun Button_forJOb(text: String, name: String, sizeF : Int, sizeS : Int, onItemCl
                     id = R.color.buttons
                 ), shape = RoundedCornerShape(10.dp)
             )
-            .clickable {  onItemClick() }
+            .clickable { onItemClick() }
             .layoutId(name),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Column() {
-            Text(text = text, Modifier.alpha(0.3f), style = TextStyle(fontWeight = FontWeight.Bold, color = colorResource(
-                id = R.color.white), fontSize = 15.sp))
-            Text(text = text,
-                Modifier
-                    .alpha(0.1f)
-                    .rotate(180f)
-                    .padding(end = 3.dp),
-                style = TextStyle(fontWeight = FontWeight.Bold, color = colorResource(id = R.color.white), fontSize = 13.sp))
-        }
+        StylezedText(text = text, 15, "do_not_need")
     }
 }
 
+@Composable
+fun StylezedText(text: String, sizeF: Int, nameLay: String){
+    Column(Modifier.layoutId(nameLay)) {
+        Text(text = text, Modifier.alpha(0.3f), style = TextStyle(fontWeight = FontWeight.Bold, color = colorResource(
+            id = R.color.white), fontSize = sizeF.sp))
+        Text(text = text,
+            Modifier
+                .alpha(0.1f)
+                .rotate(180f)
+                .padding(end = 3.dp),
+            style = TextStyle(fontWeight = FontWeight.Bold, color = colorResource(id = R.color.white), fontSize = 13.sp))
+    }
+}
