@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.bignerdranch.android.chind_de_compose.screens.FlashScreen
 import com.bignerdranch.android.chind_de_compose.screens.MainScreen
+import com.bignerdranch.android.chind_de_compose.screens.ProfileScreen
 
 @Composable
 fun SetUp(con: NavHostController) {
@@ -16,6 +17,9 @@ fun SetUp(con: NavHostController) {
         composable(NavigationForScreens.Main.rotate)
         {
             MainScreen(controller = con)
+        }
+        composable(NavigationForScreens.Profile.rotate){
+            ProfileScreen(controller = con)
         }
     }
 }

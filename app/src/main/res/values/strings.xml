@@ -6,4 +6,6 @@
     <string name="food">ГОРЯЧИЕ<n/> БЛЮДА</string>
     <string name="fish">РЫБА</string>
     <string name="apper">ЗАКУСКИ</string>
+    <string name="enter">ВОЙТИ</string>
+    <string name="registration">ЗАРЕГЕСТРИРОВАТЬСЯ</string>
 </resources>

@@ -37,10 +37,11 @@ import org.intellij.lang.annotations.JdkConstants
 import androidx.compose.foundation.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.ui.draw.clip
+import com.bignerdranch.android.chind_de_compose.navigation.NavigationForScreens
 
 @Composable
 fun MainScreen(controller: NavController) {
-    val image = painterResource(id = R.drawable.test)
+    val image = painterResource(id = R.drawable.defaultprofile)
     val constraint = ConstraintSet {
         val buttonNEWc = createRefFor("buttonNEW")
         val STOCKS = createRefFor("stocks")
@@ -95,18 +96,32 @@ fun MainScreen(controller: NavController) {
     ConstraintLayout(constraint, Modifier
         .fillMaxSize()
         .background(color = colorResource(id = R.color.back))) {
-        Button_forJOb(text = stringResource(id = R.string.news), "buttonNEW", 309,99)
-        Button_forJOb(text = stringResource(id = R.string.stocks), "stocks", 309,99)
-        Button_forJOb(text = stringResource(id = R.string.drinks), "drinks" , 147, 147)
-        Button_forJOb(text = stringResource(id = R.string.food),"food", 147 , 147)
-        Button_forJOb(text = stringResource(id = R.string.fish), "fish", 147, 147)
-        Button_forJOb(text = stringResource(id = R.string.apper), "apper", 147, 147)
-        profileButton(image = image, name = "profile")
+        Button_forJOb(text = stringResource(id = R.string.news), "buttonNEW", 309,99){
+
+        }
+        Button_forJOb(text = stringResource(id = R.string.stocks), "stocks", 309,99){
+
+        }
+        Button_forJOb(text = stringResource(id = R.string.drinks), "drinks" , 147, 147){
+
+        }
+        Button_forJOb(text = stringResource(id = R.string.food),"food", 147 , 147){
+
+        }
+        Button_forJOb(text = stringResource(id = R.string.fish), "fish", 147, 147){
+
+        }
+        Button_forJOb(text = stringResource(id = R.string.apper), "apper", 147, 147){
+
+        }
+        profileButton(image = image, name = "profile"){
+            controller.navigate(NavigationForScreens.Profile.rotate)
+        }
     }
 }
 
 @Composable
-fun profileButton(image: Painter, name: String) {
+fun profileButton(image: Painter, name: String, onItemClick: () -> Unit) {
     Row(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically,
@@ -121,6 +136,7 @@ fun profileButton(image: Painter, name: String) {
                 color = colorResource(id = R.color.tealkor),
                 shape = RoundedCornerShape(50.dp)
             )
+            .clickable {  onItemClick() }
             .size(50.dp, 50.dp)
             .layoutId(name)
     ){
@@ -131,7 +147,7 @@ fun profileButton(image: Painter, name: String) {
 }
 
 @Composable
-fun Button_forJOb(text: String, name: String, sizeF : Int, sizeS : Int /*, onItemClick: () -> Unit, */){
+fun Button_forJOb(text: String, name: String, sizeF : Int, sizeS : Int, onItemClick: () -> Unit) {
     Row(
         modifier = Modifier
             .border(
@@ -150,6 +166,7 @@ fun Button_forJOb(text: String, name: String, sizeF : Int, sizeS : Int /*, onIte
                     id = R.color.buttons
                 ), shape = RoundedCornerShape(10.dp)
             )
+            .clickable {  onItemClick() }
             .layoutId(name),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
